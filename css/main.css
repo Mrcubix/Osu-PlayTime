@@ -1,0 +1,36 @@
+body{
+    font-family: Arial,Calibri,sans-serif;
+}
+
+section{
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 0 50%;
+    flex-shrink: 1;
+    margin: -1rem;
+
+}
+
+div{
+    display: flex;
+    flex: 0 0 50%;
+    justify-content: center;
+}
+
+
+div>p{
+    flex-shrink: 1;
+    flex: 0 0 50%;
+    padding-left: 12rem;
+}
+
+p{
+    font-size: 1.8vw;
+    padding: 6rem;
+    color: white;
+    text-shadow: 1px 3px 1rem black ;
+}
+
+section:hover{
+    background-color: rgba(0,0,0,0.90);
+}

@@ -1,16 +1,35 @@
 body{
     font-family: Arial,Calibri,sans-serif;
+    margin: -1rem;
 }
 
-section{
+section {
+    position: relative;
+    z-index: 1;
+}
+
+section:hover::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    opacity: 0.4;
+    background-color: #000;
+}
+
+section p{
     display: flex;
-    flex-wrap: wrap;
-    flex: 0 0 50%;
-    flex-shrink: 1;
-    margin: -1rem;
-    background-image: url('./bg/"+map+"/bg.jpg'); 
-    background-repeat: no-repeat; 
-    background-size: cover;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    z-index: 3;
+    margin: 0;
+    font-size: 1.8vw;
+    color: white;
+    text-shadow: 1px 3px 1rem black;
 }
 
 div{
@@ -24,21 +43,15 @@ div{
 div>p{
     flex-shrink: 1;
     flex: 0 0 50%;
-    padding-left: 18rem;
 }
 
 div>div{
     flex-direction: row;
 }
 
-
 p{
     font-size: 1.8vw;
     padding: 6rem;
     color: white;
     text-shadow: 1px 3px 1rem black ;
-}
-
-section:hover{
-    background: rgba(0,0,0,0.30);
 }

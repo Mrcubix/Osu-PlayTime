@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     requests.open("GET", file, true);
     requests.send();
+
 });
 
 function write_report(data) {
@@ -25,7 +26,8 @@ function write_report(data) {
             console.log(this.getAttribute("value"));
             if (this.getAttribute("value") == "false") {
                 var diff_list = document.createElement("div");
-                for (var diff in data[this.querySelector("p").innerHTML]["difficulties"]) {
+                console.log(data[this.querySelector("p").innerHTML.split("<span>")[0]]["difficulties"]);
+                for (var diff in data[this.querySelector("p").innerHTML.split("<span>")[0]]["difficulties"]) {
                     var diff_container = document.createElement("div");
 
                     var diff_text_node = document.createElement("p");
@@ -35,7 +37,7 @@ function write_report(data) {
 
                     var diff_node = document.createElement("span");
                     var diff_text_node = document.createElement("p");
-                    var diff_text = document.createTextNode(msToTime(data[this.querySelector("p").innerHTML]["difficulties"][diff]));
+                    var diff_text = document.createTextNode(msToTime(data[this.querySelector("p").innerHTML.split("<span>")[0]]["difficulties"][diff]));
                     diff_text_node.appendChild(diff_text);
                     diff_node.appendChild(diff_text_node);
                     diff_container.appendChild(diff_node);
@@ -55,20 +57,17 @@ function write_report(data) {
         var text = document.createTextNode(map);
         figcaption.appendChild(text);
 
-        var total_time_played_parent_node = document.createElement("span");
+        var total_time_played_node = document.createElement("span");
         var total_time_played = 0;
         for (var difficulty in data[map]["difficulties"]) {
             total_time_played += data[map]["difficulties"][difficulty]
         }
-        var total_time_played_node = document.createElement("p");
         
         var total_played_text = document.createTextNode("Time played: "+msToTime(total_time_played));
 
         total_time_played_node.appendChild(total_played_text);
-        total_time_played_parent_node.appendChild(total_time_played_node);
-
+        figcaption.appendChild(total_time_played_node)
         figure.appendChild(figcaption);
-        figure.appendChild(total_time_played_parent_node);
 
         body.appendChild(figure);
     }

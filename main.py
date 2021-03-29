@@ -1,13 +1,12 @@
 import json
 import os
-import filecmp
 import shutil
 import requests
 from time import sleep
 import asyncio
 from PIL import Image
 from http.server import test, SimpleHTTPRequestHandler
-import _thread
+import threading
 
 old_time = 0
 time_passed = 0
@@ -15,10 +14,10 @@ interval = .3
 Timings = [old_time, time_passed]
 data = None
 
-def runserver(bait1, bait2):
+def runserver():
     test(SimpleHTTPRequestHandler)
 
-_thread.start_new_thread(runserver, (None,None))
+threading.Thread(target=runserver).start()
 
 async def movebg(bm, songpath):
     title = bm["metadata"]["artist"] + " - " + bm["metadata"]["title"]

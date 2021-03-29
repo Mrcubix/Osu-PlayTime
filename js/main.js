@@ -28,6 +28,7 @@ function write_report(data) {
         figure.setAttribute("style", "background-image: url('./bg/"+map+"/bg.jpg'); background-repeat: no-repeat; background-size: cover;")
         figure.setAttribute("value", false)
         figure.addEventListener("click", function() {
+            console.log(this.getAttribute("value"));
             if (this.getAttribute("value") == "false") {
                 var diff_list = document.createElement("div");
                 for (var diff in data[this.querySelector("p").innerHTML]["difficulties"]) {
@@ -51,9 +52,7 @@ function write_report(data) {
                 this.appendChild(diff_list);
             } else {
                 diffs = this.querySelectorAll("p");
-                for (i=Object.keys(data[this.querySelector("p").innerHTML]["difficulties"]).length; i != 0; i--){
-                    this.removeChild(this.querySelector("div"));
-                }
+                this.removeChild(this.querySelector("div"));
                 this.setAttribute("value", false);
             }
         });

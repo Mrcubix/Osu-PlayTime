@@ -15,14 +15,20 @@ div{
     display: flex;
     flex: 0 0 50%;
     justify-content: center;
+    flex-direction: column;
 }
 
 
 div>p{
     flex-shrink: 1;
     flex: 0 0 50%;
-    padding-left: 12rem;
+    padding-left: 18rem;
 }
+
+div>div{
+    flex-direction: row;
+}
+
 
 p{
     font-size: 1.8vw;

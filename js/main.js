@@ -20,7 +20,7 @@ function write_report(data) {
         
 
         var figure = document.createElement("section");
-        figure.setAttribute("style", "background-image: url('./bg/"+map+"/bg.jpg'); background-repeat: no-repeat; background-size: cover;")
+        figure.setAttribute("style", "background-image: url('./bg/"+map+"/bg.jpg');")
         figure.setAttribute("value", false)
         figure.addEventListener("click", function() {
             console.log(this.getAttribute("value"));

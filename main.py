@@ -1,10 +1,42 @@
 import json
 import os
-import shutil
-import requests
+try:
+    import shutil
+except:
+    a = input("shutil need to be installed in order for this script to be used, do you wish to install shutil now? Y/n: ")
+    if a == "Y" or a == "y" or a == "YES" or a == "yes":
+        import subprocess
+        import sys
+        subprocess.call([sys.executable, "-m", "pip", "install", "shutil"])
+        import shutil
+try:
+    import requests
+except:
+    a = input("requests need to be installed in order for this script to be used, do you wish to install requests now? Y/n: ")
+    if a == "Y" or a == "y" or a == "YES" or a == "yes":
+        import subprocess
+        import sys
+        subprocess.call([sys.executable, "-m", "pip", "install", "requests"])
+        import requests
 from time import sleep
-import asyncio
-from PIL import Image
+try:
+    import asyncio
+except:
+    a = input("asyncio need to be installed in order for this script to be used, do you wish to install asyncio now? Y/n: ")
+    if a == "Y" or a == "y" or a == "YES" or a == "yes":
+        import subprocess
+        import sys
+        subprocess.call([sys.executable, "-m", "pip", "install", "asyncio"])
+        import asyncio
+try:
+    from PIL import Image
+except:
+    a = input("Pillow need to be installed in order for this script to be used, do you wish to install Pillow now? Y/n: ")
+    if a == "Y" or a == "y" or a == "YES" or a == "yes":
+        import subprocess
+        import sys
+        subprocess.call([sys.executable, "-m", "pip", "install", "Pillow"])
+        from PIL import Image
 from http.server import test, SimpleHTTPRequestHandler
 import threading
 

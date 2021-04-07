@@ -20,7 +20,10 @@ def runserver():
 threading.Thread(target=runserver).start()
 
 async def movebg(bm, songpath):
-    title = bm["metadata"]["artist"] + " - " + bm["metadata"]["title"]
+    title = (str(bm["metadata"]["artist"]) if bm["metadata"]["artist"] else "") + " - " + bm["metadata"]["title"]
+    char_list_excl = ["/","\\",'"',"*","?","<",">","|","[","]",":"]
+    for s in char_list_excl:
+        title = title.replace(s," ")
     if str(bm["set"])+" "+title in os.listdir("bg"):
         pass
     else:
@@ -65,6 +68,9 @@ async def getTimePassed(Timings):
 async def SaveToFile(Timings, bm):
     title = bm["metadata"]["artist"] + " - " + bm["metadata"]["title"]
     title = str(bm["set"])+" "+"'{}'".format(title).replace("'", "")
+    char_list_excl = ["/","\\",'"',"*","?","<",">","|","[","]",":"]
+    for s in char_list_excl:
+        title = title.replace(s," ")
     difficulty = bm["metadata"]["difficulty"]
     filepath = __file__.split("main.py")[0]+"log.json"
     # if log file exist, then check if it's size is 0, else, create a new file with the previous map's data

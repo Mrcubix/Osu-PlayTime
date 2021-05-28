@@ -5,32 +5,90 @@
         <meta http-equiv="cache-control" content="no-cache">
         <title>Osu!PlayTime - Report</title>
         <link rel="styleSheet" href="css/main.css" type="text/css">
-        <script type="text/javascript" src="js/main.js"></script>
+        <link rel="styleSheet" href="css/index.css" type="text/css">
+        <script type="text/javascript" src="js/axios.min.js"></script>
+        <script type="text/javascript" src="js/getToken.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
     </head>
     <body>
         <header class="menu">
-            left side
-            <section class="right_side">
-                <input class="search_bar" type="text">
-                <img class="search_settings" src="./img/settings.svg">
-                <section class="settings_menu">
-                    <div class="diff_search">
-                        <input id="diff_search_box" type="checkbox">
-                        <span>Search difficulty names</span>
-                    </div>
-                    <div class="sort_setting">
-                        <p class="sort_text">Sort:</p>
-                        <select id="sort_setting_select">
-                            <option value="default">Data Added</option>
-                            <option value="time">Time Played</option>
-                            <option value="alpha">Alphabetical</option>
-                        </select>
-                    </div>
-                    <button type="button">close</button>
-                </section>
+            <section class="navigation_menu">
+                <a href="./index.html">
+                    Home
+                </a>
+                <a href="#WIP">
+                    Download
+                </a>
+                <a href="#WIP">
+                    Statistic
+                </a>
+                <a href="./Playtime.html">
+                    PlayTime
+                </a>
+                <a href="./Editor.html">
+                    Editor
+                </a>
             </section>
         </header>
+        <article>
+            <section id="token"> Votre Token est: </section>
+            <section class="presentation">
+                <p>Ce site fais partie d'une projet exterieur de ma création consistant à enregistrer les durées de sessions pour le jeu osu!</p>
+                
+                <p>Dans l'onglet PlayTime, vous trouverez la durée de vos sessions sur les beatmapset jouées.</p>
+
+                <p>Un beatmapset est un ensemble de maps publié par un joueur mais pouvant être créer par tous le monde,
+                Quant aux maps, il s'agit d'un ensemble de patternes suivant ou non la bande sonore associé.</p>
+
+                <p>Les données sont collectés à l'aide d'un programme open source lisant la mémoire 
+                tandis que je collecte les informations délivrées par cette dernière.</p>
+
+                <p>Ces informations sont pour le moment stocké pour chaque joueurs dans un fichier json.
+                Le javascript associé à chaque page recherche des informations soit dans les données du joueurs,
+                Soit de tous les joueurs utilisant l'outil (WIP).</p>
+
+                <section class="presentation_playtime">
+                    Page PlayTime:
+                    <p>Exemple de container:</p>
+                    <section class="beatmap" style="background-image: url('#')"></section>
+                        
+                    <p>le temps total joué sur chaque beatmap est représenté par le texte "Total time played: + Temps total".
+                    Si vous cliquez sur un beatmapset, vous accédez à son contenu c'est à dire les différentes 
+                    niveaux de difficultés (aussi appelé maps).
+                    à chaque difficultés sont associés les différents temps passé sur chaque niveaux de difficultés,
+                    représenté par le texte "Time played: + Temps".</p>
+
+                    <p>En arrière plan, le code javascript demande le contenu du json pour le joueur et ajoute les beatmapsets sous différent containers à la page.
+                    ces containers se voient attribué un eventlistener qui vérifie si le container est cliqué, si il est cliqué, 
+                    alors le script recherche les difficultés de la map et les ajoute chacun dans un sous-sous-container du beatmapset.</p>
+
+                    <p>beatmapset &#9755; nom + temps total + container de toutes difficultés &#9755; container difficulté &#9755; nom + temps</p>
+                </section>
+                <section class="presentation_editor">
+                    Page Editor:
+                    <p>Exemple de container:</p>
+                    <section class="beatmap">
+
+                    </section>
+                    <p>Même fonctionnement que précedemment sauf que le texte devient "Total Time Edited:" pour le temps total et "Time Edited" 
+                    pour le temps par difficultés</p>
+                </section>
+                <section class="settings">
+                    Paramètres:
+                    <img src="./img/Capture.PNG">
+                <p>Une option pour rechercher par difficulté est disponible.</p>
+                <p>Un autre mode de tri par temps de jeu, ascendant et descendant est disponible dans les paramètres situé en haut à droite de la page.</p>
+                <p>Un mode gaucher y aussiest disponible.</p>
+                <p>Un mode Multi-joueur est disponible et montre le temps de jeu sur chaque beatmap et difficultés pour tous les joueurs une fois activé.</p>
+                </section>
+                <section class="presentation_statistic">
+                    Page Statistique:
+                    <p>Exemple de container</p>
+                    <section class="statistic_container">
+                        WIP
+                    </section>
+                </section>
+            </section>
+        </article>
     </body>
-
-
 </html>

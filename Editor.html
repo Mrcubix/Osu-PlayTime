@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="cache-control" content="no-cache">
+        <title>Editor - Osu!PlayTime</title>
+        <link rel="styleSheet" href="css/main.css" type="text/css">
+        <link rel="styleSheet" href="css/BeatmapHandler.css" type="text/css">
+        <script type="text/javascript" src="js/axios.min.js"></script>
+        <script type="text/javascript" src="js/getToken.js"></script>
+        <script type="text/javascript" src="js/BeatmapHandler.js"></script>
+    </head>
+    <body>
+        <header class="menu">
+            <section class="navigation_menu">
+                <a href="./index.html">
+                    Home
+                </a>
+                <a href="#WIP">
+                    Download
+                </a>
+                <a href="#WIP">
+                    Statistic
+                </a>
+                <a href="./Playtime.html">
+                    PlayTime
+                </a>
+            </section>
+            <section class="search_sort">
+                <input class="search_bar" type="text">
+                <img class="search_settings" src="./img/settings.svg">
+                <section class="settings_menu">
+                    <div class="diff_search">
+                        <input id="diff_search_box" type="checkbox">
+                        <span>Search difficulty names</span>
+                    </div>
+                    <div class="sort_setting">
+                        <p class="sort_text">Sort:</p>
+                        <section class="dropdown_container">
+                            <select id="sort_method_dropdown">
+                                <option value="default">Data Added</option>
+                                <option value="time">Time Played</option>
+                            </select>
+                            <select id="sort_dir_dropdown">
+                                <option value="Dsc">Dsc</option>
+                                <option value="Asc">Asc</option>
+                            </select>
+                        </section>
+                    </div>
+                    <div class="other_settings">
+                        <p class="hand_text">Hand:</p>
+                        <select id="hand">
+                            <option value="left">Left</option>
+                            <option value="right">Right</option>
+                        </select>
+                        <p class="token_text">Token:</p>
+                        <button type="button">Show Token</button>
+                        <div class="multiplayer_option">
+                            <input id="multiplayer_checkbox" type="checkbox">
+                            <span>Show time for all Users</span>
+                        </div>
+                    </div>
+                    <button type="button">close</button>
+                </section>
+            </section>
+        </header>
+    </body>
+</html>

@@ -1,0 +1,108 @@
+body{
+    background-color: rgb(28,23,25);
+}
+
+
+.settings>img{
+    margin-left: -3rem
+}
+
+.settings>p{
+    padding-left: 2rem
+}
+
+article{
+    margin-left: 2em;
+    color: white;
+    font-size: 1.8vw
+}
+
+.presentation>p{
+    margin-right: 2em
+}
+
+.presentation_playtime>p{
+    margin-left: 2em;
+    margin-right: 4em
+}
+
+.presentation_editor>p{
+    margin-left: 2em;
+    margin-right: 4em
+}
+
+#token{
+    margin-top: 2rem
+}
+
+.beatmap{
+    margin-left: -2em;
+    background-repeat: no-repeat; 
+    background-size: cover;
+    z-index: 1;
+}
+
+.beatmap>p{
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    font-size: 1.8vw;
+    padding: 6rem;
+    color: white;
+    text-shadow: 1px 3px 1rem black;
+    transition: ease 0.5s;
+}
+
+.beatmap:not(:hover) > p {
+    background-color: rgba(0,0,0,0.17)
+}
+
+.beatmap:hover > p {
+    background-color: rgba(0,0,0,0.4)
+}
+
+.beatmap:not(:hover) > .diff_list {
+    background-color: rgba(0,0,0,0.17)
+}
+
+.beatmap:hover > .diff_list {
+    background-color: rgba(0,0,0,0.4)
+}
+
+.diff_list{
+    display: flex;
+    flex-direction: column;
+    transition: ease 0.5s;
+}
+
+.diff_list>div{
+    flex-direction: row;
+    justify-content: center;
+}
+
+div>p{
+    display:flex;
+    flex: 0 0 85%;
+    justify-content: space-between;
+    font-size: 1.8vw;
+    padding: 6rem;
+    color: white;
+    text-shadow: 1px 3px 1rem black;
+}
+
+@media screen and (max-width:1280px) {
+    article>section{
+        font-size: 23px;
+    }
+    article>section>section{
+        font-size: 23px;
+    }
+    .beatmap>p{
+        font-size: 23px;
+        justify-content: space-around;
+    }
+    .beatmap>div>div>p{
+        font-size: 23px;
+        justify-content: space-around;
+    }
+}

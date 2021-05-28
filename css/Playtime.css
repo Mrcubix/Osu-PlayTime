@@ -1,0 +1,91 @@
+.menu{
+    flex: 0 0 50%;
+}
+
+.navigation_menu {
+    flex: 0 0 50%;
+}
+
+.beatmap{
+    background-repeat: no-repeat; 
+    background-size: cover;
+    z-index: 1;
+}
+
+.beatmap>p{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.beatmap:not(:hover) > p{
+    background-color: rgba(0,0,0,0.17)
+}
+
+.beatmap:hover > p{
+    background-color: rgba(0,0,0,0.4)
+}
+
+.beatmap:not(:hover) > .diff_list{
+    background-color: rgba(0,0,0,0.17)
+}
+
+.beatmap:hover > .diff_list{
+    background-color: rgba(0,0,0,0.4)
+}
+
+div{
+    display: flex;
+    flex: 0 0 50%;
+    justify-content: space-evenly;
+    flex-direction: column;
+    transition: ease 0.5s;
+}
+
+div>p{
+    display:flex;
+    justify-content: space-between;
+    flex: 0 0 50%;
+}
+
+div>div{
+    flex-direction: row;
+}
+
+p{
+    font-size: 1.8vw;
+    padding: 6rem;
+    margin: 0;
+    color: white;
+    text-shadow: 1px 3px 1rem black;
+    transition: ease 0.5s;
+}
+
+@media screen and (max-width:1280px) {
+
+    p {
+        font-size: 23px;
+        padding: 6rem 4rem 6rem;
+    }
+
+    .search_sort {
+        font-size: 15px;
+    }
+
+    .search_bar {
+        font-size: 23px;
+    }
+
+    .sort_text {
+        font-size: 15px;
+    }
+
+    .diff_search>span {
+        font-size: 15px
+    }
+
+    .settings_menu {
+        width: 160px;
+    }
+}

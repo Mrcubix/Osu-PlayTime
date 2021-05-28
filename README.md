@@ -13,6 +13,4 @@ Open your brother and head to http://localhost:8000 to check the report where th
 
 # Work in progress:
 
-- UI
-- Sorting options
 - Cleaning
